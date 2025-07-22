@@ -1,12 +1,16 @@
-// Define the PageRouteProps type
-export interface PageRouteProps {
-  pageRoute: string;
+import type { ReactNode } from "react"
+
+export interface ButtonProps {
+  buttonLabel: string
+  buttonSize?: string
+  buttonBackgroundColor?: "red" | "blue" | "orange" | "green"
+  action?: () => void
 }
 
-import { useRouter } from 'next/router';
+export interface LayoutProps {
+  children: ReactNode
+}
 
-// Imeperative routing with useRouter
-const routeToNextPage = ({ pageRoute }: PageRouteProps) => {
-  const router = useRouter();
-  router.push(pageRoute, undefined, { shallow: false });
+export interface PageRouteProps {
+  pageRoute: string
 }
